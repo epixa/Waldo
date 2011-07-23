@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Waldo: Where are your Twitter followers?</title>
+
+    <link type="text/css" rel="stylesheet" href="styles/screen.css" />
+
+    <!--[if lte IE 8]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!--[if lte IE 8]>
+    <noscript>
+         <strong>Warning!</strong>
+         Because your browser does not support HTML5, some elements are
+         simulated using JavaScript.  Unfortunately your browser has disabled
+         scripting. Please enable it in order to render this page.
+    </noscript>
+    <![endif]-->
+
+    <header>
+        <hgroup>
+            <h1><a href="/">Waldo</a></h1>
+            <h2>&raquo; Where are your Twitter followers?</h2>
+        </hgroup>
+    </header>
+
+    <noscript>
+         <div class="error">
+             This script requires JavaScript to send the API requests to Twitter.
+         </div>
+    </noscript>
+
+    <section id="identity">
+        <form method="get" action="">
+            <input type="text" id="screen_name" name="screen_name" value="" maxlength="15" />
+        </form>
+    </section>
+
+    <section id="map"></section>
+
+    <footer>
+        <span class="author">Created by <a href="http://epixa.com">Court Ewing</a></span>
+        &middot;
+        <span class="host">Hosted on <a href="http://orchestra.io">Orchestra.io</a></span>
+    </footer>
+
+    <script type="text/javascript" src="scripts/request.js"></script>
+    <script type="text/javascript" src="scripts/twitter.js"></script>
+    <script type="text/javascript" src="scripts/waldo.js"></script>
+</body>
+</html>
