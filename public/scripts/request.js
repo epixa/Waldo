@@ -29,28 +29,19 @@ waldo.Request = waldo.Request || {};
         };
 
         /**
-         * Gets the current HTTP status code for this request
-         *
-         * @return integer
-         */
-        this.getStatus = function(){
-            return client.status;
-        };
-
-        /**
          * Callback function for when the request headers are received
          */
-        this.onHeadersReceived = function(){};
+        this.onHeadersReceived = function(client){};
 
         /**
          * Callback function for when response data is received but is still partial
          */
-        this.onLoading = function(){};
+        this.onLoading = function(client){};
 
         /**
          * Callback function for when the request is completed
          */
-        this.onSuccess = function(){};
+        this.onSuccess = function(client){};
 
         /**
          * Constructor
@@ -61,15 +52,15 @@ waldo.Request = waldo.Request || {};
             client.onreadystatechange = function(){
                 switch (client.readyState) {
                     case 4:
-                        self.onSuccess();
+                        self.onSuccess(client);
                         break;
 
                     case 3:
-                        self.onLoading();
+                        self.onLoading(client);
                         break;
 
                     case 2:
-                        self.onHeadersReceived();
+                        self.onHeadersReceived(client);
                         break;
 
                     default:
